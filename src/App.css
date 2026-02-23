@@ -1,0 +1,49 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.healthBar {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;;
+}
+
+.innerBar {
+  padding: 0px 10px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color : red;
+}
+
+.innerBar * {
+  margin : 0px;
+  color: aliceblue;
+}
+
+.rotate {
+  margin: 90px;
+  width: 400px;
+  aspect-ratio: 1;
+  position: absolute;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    trasform : rotate(0deg);
+  }
+  to {
+    transform : rotate(360deg);
+  }
+}

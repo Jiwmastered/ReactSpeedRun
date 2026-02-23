@@ -1,0 +1,58 @@
+* {
+    font-family: Consolas;
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    
+}
+
+.box {
+    display: flex;
+    gap: 10px;
+    background-color: black;
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;
+    border: 3px solid white;
+}
+
+.box.noMargin {
+    margin: 0px;
+    flex-grow: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px ;
+    background-color: black;
+    /* container-type: inline-size; */
+    font-size: 40px;
+    border: 3px solid white;
+    transition: background-color 0.3s ease, padding 0.2s ease;
+}
+
+button:hover {
+    /* padding: 8px 15px; */
+    color: black;
+    background-color: white;
+}
+
+button:active {
+    padding: 5px 13px;
+    background-color: yellow;
+}
+
