@@ -25,6 +25,9 @@ export default function CharSelector() {
         <div className="box" style={{width:"100%", height:"25vh",flexDirection:"column", justifyContent:"center", alignItems:"center", margin:"0px"}}>
             <h3>{player? `Selecting ${CHARACTERS[player].name}`: "Choose Player"}</h3>
             <button style={{flexGrow:"1", maxHeight:"100px", width:"500px"}} onClick={()=>{
+                if (!player) {
+                    return;
+                }
                 setPage('boss');
             }    
             } >Fight</button>

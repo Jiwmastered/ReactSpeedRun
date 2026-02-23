@@ -37,11 +37,32 @@ h1 {
     gap: 10px;
 }
 
+.cover {
+    flex-grow: 1;
+    max-width: 100px;
+    width: 100px;
+}
+
+.list.cover {
+    width: 100px;
+}
+
 @media (min-width: 1024px) {
     .list.pd {
         padding: 0px 250px;
     }
+
+    .cover {
+        width: 250px;
+        max-width: 250px;
+        object-fit: cover;
+    }
+
+    .list.cover {
+        width: 250px;
+    }
 }
+
 
 button {
     padding: 10px 20px ;
@@ -63,3 +84,14 @@ button:active {
     background-color: yellow;
 }
 
+span.red {
+    color: red;
+}
+
+span.blue {
+    color: aqua;
+}
+
+span.green {
+    color: greenyellow;
+}

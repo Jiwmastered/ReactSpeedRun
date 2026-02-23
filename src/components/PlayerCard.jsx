@@ -10,8 +10,8 @@ export default function PlayerCard(props) {
 
     return (
         <div className='box' style={{maxHeight:"500px"}}>
-            <div className='list' style={{width:"250px"}}>
-                <img src={props.img} style={{flexGrow:"1", width:"250px"}} alt="" />
+            <div className='list cover'>
+                <img className="cover" src={props.img}  alt="" />
                 <button onClick={()=>{
                     setPlayer(currentPlayer);
                 }}>{(player===currentPlayer) ? "Using" : "Use"}</button>
@@ -20,38 +20,38 @@ export default function PlayerCard(props) {
                 <div className='list'>
                     <h2>{props.info.name}</h2>
                     <p>{props.info.desc}</p>
-                    <h3>Stats</h3>
-                    <ul>
-                        <li>HP : {props.info.stat.hp}</li>
-                        <li>Attack : {props.info.stat.atk}</li>
-                        <li>Accuracy : {props.info.stat.acc} %</li>
-                    </ul>
-                    <h3>Skills</h3>
-                    <ul>
+                    <h3><span className="red">Stats</span></h3>
+                    <div style={{display:"flex"}}>
+                        <div className="box">HP : {props.info.stat.hp}</div>
+                        <div className="box">Attack : {props.info.stat.atk}</div>
+                        <div className="box">Accuracy : {props.info.stat.acc} %</div>
+                    </div>
+                    <h3><span className="blue">Skills</span></h3>
+                    <div className="list">
                         {props.info.skill.map((v, id)=>{
                             const val = SKILLS[v];
-                            return (<>
+                            return (<div className="box">
                                 <b>{val.name} [{val.type}ing]</b>
                                 <ul>
-                                    <li>{val.type} power : {val.power}</li>
-                                    <li>cost : {val.cost}</li>
+                                    <li>{val.type} power : <b>{val.power}</b></li>
+                                    <li>cost : <b>{val.cost}</b></li>
                                 </ul>
-                            </>);
-                        }
+                            </div>);
+                            }
                         )}
-                    </ul>
-                    <h3>Items</h3>
-                    <ul>
+                    </div>
+                    <h3><span className="green">Items</span></h3>
+                    <div className="list" >
                         {props.info.item.map((v, id)=>{
                             const val = ITEMS[v];
-                            return (<>
+                            return (<div className="box">
                                 <b>{val.name} [{val.type}ing]</b>
                                 <ul>
-                                    <li>{val.type} power : {val.power}</li>
+                                    <li>{val.type} power : <b>{val.power}</b></li>
                                 </ul>
-                            </>);
+                            </div>);
                         })}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
