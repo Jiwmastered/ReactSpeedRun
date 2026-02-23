@@ -30,10 +30,17 @@ h1 {
     scrollbar-width: none;
 }
 
+
 .list {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+@media (min-width: 1024px) {
+    .list.pd {
+        padding: 0px 250px;
+    }
 }
 
 button {

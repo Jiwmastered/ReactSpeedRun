@@ -11,7 +11,7 @@ export default function PlayerCard(props) {
     return (
         <div className='box' style={{maxHeight:"500px"}}>
             <div className='list' style={{width:"250px"}}>
-                <img src={props.img} style={{flexGrow:"1"}} alt="" />
+                <img src={props.img} style={{flexGrow:"1", width:"250px"}} alt="" />
                 <button onClick={()=>{
                     setPlayer(currentPlayer);
                 }}>{(player===currentPlayer) ? "Using" : "Use"}</button>

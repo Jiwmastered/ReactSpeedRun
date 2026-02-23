@@ -12,7 +12,7 @@ export default function CharSelector() {
 
     return (
         <>
-        <div className="list" style={{padding: "0px 250px", height:"75vh", overflow:"scroll", scrollbarWidth:"none"}}>
+        <div className="list pd" style={{ height:"75vh", overflow:"scroll", scrollbarWidth:"none"}}>
             <div style={{display:"flex", flexDirection:"column", alignItems:"center", margin:"50px"}}>
                 <h1>Char Selector Page</h1>
             </div>
