@@ -30,6 +30,10 @@ h1 {
     scrollbar-width: none;
 }
 
+.box.actionBar button {
+    flex:1;
+    padding: 0;
+}
 
 .list {
     display: flex;

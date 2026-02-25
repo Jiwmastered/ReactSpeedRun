@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PageContext } from "../contexts/PageContext";
 import { PlayerContext } from "../contexts/PlayerContext";
 
-import { CHARACTERS } from "../api/CharacterData";
+import { CHARACTERS } from "../api/characters.js";
 
 import PlayerCard from "../components/PlayerCard";
 

@@ -13,5 +13,15 @@ export const ITEMS = {
         name : "Razor Mouse",
         type : "debuff",
         power : 5
+    },
+    "saka3Souvenir": {
+        name : "Saka 3 Trip Snorkle",
+        type : "heal",
+        power : 12
+    },
+    "artMilk" : {
+        name : "Art Milk",
+        type : "buff",
+        power : 5
     }
 }

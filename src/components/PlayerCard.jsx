@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { PlayerContext } from "../contexts/PlayerContext";
 import '../index.css'
-import { ITEMS } from '../api/ItemData'
-import { SKILLS } from '../api/SkillData'
+import { ITEMS } from '../api/items'
+import { SKILLS } from '../api/skills'
 
 export default function PlayerCard(props) {
     const [currentPlayer, setCurrentPlayer] = useState(props.name);
