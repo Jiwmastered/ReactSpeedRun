@@ -1,21 +1,101 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    font-family: Consolas;
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+    background-color: black;
+}
+
+h1 {
+    
+}
+
+.box {
+    display: flex;
+    gap: 10px;
+    background-color: black;
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;
+    border: 3px solid white;
+}
+
+.box.noMargin {
+    margin: 0px;
+    flex-grow: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.box.actionBar button {
+    flex:1;
+    padding: 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cover {
+    flex-grow: 1;
+    max-width: 100px;
+    width: 100px;
+}
+
+.list.cover {
+    width: 100px;
+}
+
+@media (min-width: 1024px) {
+    .list.pd {
+        padding: 0px 250px;
+    }
+
+    .cover {
+        width: 250px;
+        max-width: 250px;
+        object-fit: cover;
+    }
+
+    .list.cover {
+        width: 250px;
+    }
+}
+
+
+button {
+    padding: 10px 20px ;
+    background-color: black;
+    /* container-type: inline-size; */
+    font-size: 40px;
+    border: 3px solid white;
+    transition: background-color 0.3s ease, padding 0.2s ease;
+}
+
+button:hover {
+    /* padding: 8px 15px; */
+    color: black;
+    background-color: white;
+}
+
+button:active {
+    padding: 5px 13px;
+    background-color: yellow;
+}
+
+span.red {
+    color: red;
+}
+
+span.blue {
+    color: aqua;
+}
+
+span.green {
+    color: greenyellow;
 }

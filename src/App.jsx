@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import Lobby from './pages/lobby.jsx'
+import {  useState, useCallback, useContext, createContext } from 'react'
+
+import CharSelector from './pages/CharSelector.jsx'
+import BossFightPage from './pages/BossFightPage.jsx'
+
+import { PageContext } from './contexts/PageContext.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { page } = useContext(PageContext);
 
-  return (
-    <>
-      <Lobby/>
-    </>
-  )
+  if (page === 'menu') {
+    return (<CharSelector />);
+  } else if (page === 'boss') {
+    return (<BossFightPage />);
+  }
 }
 
-export default App
+export default App;
