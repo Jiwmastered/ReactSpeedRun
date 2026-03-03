@@ -88,6 +88,10 @@ button:active {
     background-color: yellow;
 }
 
+button.choice {
+    padding: 5px, 5px;
+}
+
 span.red {
     color: red;
 }

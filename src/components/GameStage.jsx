@@ -10,15 +10,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
-function toX(x) {
-    return x + canvasSize.width/2;
-}
-
-function toY(y) {
-    return y + canvasSize.height/2;
-}
-
 const keys = {};
 let phaseDenounce = false;
 let jumpDenounce = false;
@@ -84,8 +75,10 @@ function GameStage() {
         let animationId, gameController;
         function loop() { //Cal pos
             // console.log(stat.phase);
-            if (stat.player.hp <= 0) return;
+            // if (stat.player.hp <= 0) return;
 
+
+            // DENOUNCE
             if (!hitDenounce) {
                 hitTimer -= 0.01;
                 if (hitTimer <= 0) {
@@ -98,10 +91,11 @@ function GameStage() {
             } else {
                 obstructTimer = maxObstructTimer;
             }
-            // Update Canvas
+
+            // UPDATE CANVAS
             const cdx = (canvasSize.width - canvas.width) / 2;
             canvas.width += cdx;
-            console.log(canvas.width);
+            // console.log(canvas.width);
             canvas.height = canvasSize.height;
 
 
@@ -116,16 +110,7 @@ function GameStage() {
             }
             playerPos.x = Math.max(Math.min(playerPos.x + playerPos.vx, canvasSize.width - 25), 25);
 
-            
-            // [Draw]
-            // DRAW PLAYER
-            ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, canvasSize.width, canvasSize.height);
-            ctx.drawImage(imgRef.current, playerPos.x - 25, playerPos.y - 25, 50, 50);
-            
-            // OBSTRUCTS
-            // [Spawn]
-            // call preset, if that preset timer isnt dead dont called it 
+            // [[PHASE LISTEN]] 
             if (obstructTimer == maxObstructTimer) {
                 if (stat.phase == 1) {
                     presets.topBottom();
@@ -139,21 +124,31 @@ function GameStage() {
                     presets.pillar(2);
                     async () => {
                         await sleep(1000)
-                        console.log("spawn bottom")
+                        // console.log("spawn bottom")
                         presets.topBottom();
                     }
                 }
             }
-            if (stat.phase == 2) {
-                canvasSize.width = 1000;
+            if (stat.player.hp > 0) {
+                if (stat.phase == 2) {
+                    canvasSize.width = 1000;
+                } else {
+                    canvasSize.width = CANVAS.WIDTH;
+                }
             } else {
-                canvasSize.width = CANVAS.WIDTH;
+                canvasSize.width = 0;
             }
             setCvWidth(canvasSize.width);
 
-            updateAll();
+            
+            
+            // [Draw] Image
+            // DRAW PLAYER
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvasSize.width, canvasSize.height);
+            ctx.drawImage(imgRef.current, playerPos.x - 25, playerPos.y - 25, 50, 50);
 
-            // [Draw]
+            updateAll(); // Update obstruction position
             obstructs.forEach(e => {
                 ctx.beginPath();
                 // console.log(e.x, e.y);

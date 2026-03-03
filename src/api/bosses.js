@@ -50,6 +50,15 @@ export const BOSSES = {
                 "Nungmoo",
                 "I sud lao"
             ],
+            success : [
+                "Nice choice!",
+                "You are my twin"
+            ],
+            fail : [
+                "fak nah",
+                "Boy what the hell",
+                "Please stfu"
+            ],
             random : [
 
             ]
